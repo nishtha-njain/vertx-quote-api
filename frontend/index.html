@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+
+<body>
+
+<main class="container">
+
+    <h1>Quote Generator</h1>
+
+    <div class="info-card">
+        <p>
+            Version:
+            <strong id="version">Loading...</strong>
+        </p>
+
+        <p>
+            Status:
+            <strong id="status">Checking...</strong>
+        </p>
+    </div>
+
+    <button onclick="getQuote()">
+        Generate Quote
+    </button>
+
+    <article class="quote-card">
+        <p id="quote">
+            Click the button to generate a quote.
+        </p>
+    </article>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

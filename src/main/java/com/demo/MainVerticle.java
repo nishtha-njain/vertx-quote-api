@@ -3,6 +3,7 @@ package com.demo;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.handler.CorsHandler;
 
 import java.util.List;
 import java.util.Random;
@@ -27,6 +28,13 @@ public class MainVerticle extends AbstractVerticle {
     public void start() {
 
         Router router = Router.router(vertx);
+
+        router.route().handler(
+                CorsHandler.create()
+                        .addOrigin("*")
+                        .allowedMethod(io.vertx.core.http.HttpMethod.GET)
+                        .allowedHeader("*")
+        );
 
         router.get("/").handler(ctx ->
                 ctx.response().end("Quote API is running!")
